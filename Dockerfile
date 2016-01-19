@@ -17,6 +17,9 @@ RUN sha1sum --check checksum
 RUN mkdir -p /opt/zookeeper
 RUN tar --strip-components=1 -zxf zookeeper-${VERSION}.tar.gz -C /opt/zookeeper
 
+# Clean up
+RUN rm -rf /tmp/*
+
 # Setup dataDir
 RUN mkdir -p /opt/zookeeper/data
 
